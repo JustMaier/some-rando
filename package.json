@@ -15,6 +15,7 @@
   "author": "Justin Maier <Just.Maier@gmail.com> (https://heyj.us)",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.9.2",
     "@discordjs/collection": "^0.1.5",
     "discord.js": "^12.1.1",
     "lodash": "^4.17.15",
