@@ -217,9 +217,9 @@ Character.managedProperties = {
 
 Character.router = new ChatRouter()
   .add('name', ['my name is :name', 'call me :name', 'i am :name', 'name\: :name'])
-  .add('age', ['i\'m :age years old', 'i\'ve been alive :age years', 'age\: :age'])
+  // .add('age', ['i\'m :age years old', 'i\'ve been alive :age years', 'age\: :age'])
   .add('alias', ['i respond to(\:) :alias', 'alias(\:) :alias', 'aka(\:) :alias'])
   .add('avatar', ['this is me(\:) *avatar', 'avatar(\:) *avatar', '(this is )(my )photo( is)(\:) *avatar'])
-  .add('creator', ['i was started by :creator', '(i was )made by :creator', '(i was )birthed by :creator'])
-  .add('created', ['i was born on :created', 'created(\:) :created'])
+  // .add('creator', ['i was started by :creator', '(i was )made by :creator', '(i was )birthed by :creator'])
+  // .add('created', ['i was born on :created', 'created(\:) :created'])
   .add('response', ['*response'])

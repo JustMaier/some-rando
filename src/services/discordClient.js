@@ -91,7 +91,7 @@ export default class DiscordClient extends Client {
   async loadWebhook (channel) {
     const webhooks = await channel.fetchWebhooks()
     if (webhooks.size === 0) {
-      // TODO create webhook
+      channel.webhook = await channel.createWebhook(`Some Rando Bot`)
     } else {
       channel.webhook = webhooks.first()
     }
@@ -169,36 +169,24 @@ export default class DiscordClient extends Client {
   }
 
   botMessage (message) {
-    // TODO Handle Alias Checks
-    // TODO Handle Name Checks
-    // TODO Handle Photo Checks
     const bot = message.guild.bots.get(message.channel.id)
     if (bot) bot.processMessage(message)
     this.emit('botMessage', message)
   }
 
   botMessageDelete (message) {
-    // TODO Handle Alias Checks
-    // TODO Handle Name Checks
-    // TODO Handle Photo Checks
     const bot = message.guild.bots.get(message.channel.id)
     if (bot) bot.deleteMessage(message)
     this.emit('botMessageDelete', message)
   }
 
   botReactionAdd (reaction, user) {
-    // TODO Handle Photo Checks
-    // TODO Handle Name Checks
-    // TODO Handle Alias Checks
     const bot = reaction.message.guild.bots.get(reaction.message.channel.id)
     if (bot) bot.processReaction(reaction, user)
     this.emit('botReactionAdd', reaction, user)
   }
 
   botReactionRemove (reaction, user) {
-    // TODO Handle Photo Checks
-    // TODO Handle Name Checks
-    // TODO Handle Alias Checks
     const bot = reaction.message.guild.bots.get(reaction.message.channel.id)
     if (bot) bot.deleteReaction(reaction, user)
     this.emit('botReactionRemove', reaction, user)
